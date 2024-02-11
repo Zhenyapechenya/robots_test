@@ -1,9 +1,6 @@
 """
 SQL-скрипт, который выводит название книги и ее авторов для жанра “Фантастика”
-
 """
-from concurrent.futures.process import BrokenProcessPool
-from lzma import FORMAT_ALONE
 from connect import manipulate_table, my_db
 
 

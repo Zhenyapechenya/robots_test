@@ -1,3 +1,6 @@
+"""
+Создание подключения к базе данных и выполнение SQL скриптов
+"""
 import mysql.connector
 from mysql.connector import Error
 
@@ -31,10 +34,7 @@ def manipulate_table(my_db, queries):
 
         results = cursor.fetchall()
         for row in results:
-            print(f"Название книги: {row[0]}, Авторы: {row[1]}")
-        # results = cursor.fetchall()
-        # for row in results:
-        #     print(row)
+            print(row)
 
         my_db.commit()
 
@@ -42,3 +42,4 @@ def manipulate_table(my_db, queries):
 
     except Error as e:
         print(e)
+
