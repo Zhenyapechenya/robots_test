@@ -1,1 +1,2 @@
 pymysql
+mysql-connector-python
