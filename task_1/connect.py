@@ -29,6 +29,9 @@ def manipulate_table(my_db, queries):
         for query in queries:
             cursor.execute(query)
 
+        results = cursor.fetchall()
+        for row in results:
+            print(f"Название книги: {row[0]}, Авторы: {row[1]}")
         # results = cursor.fetchall()
         # for row in results:
         #     print(row)
