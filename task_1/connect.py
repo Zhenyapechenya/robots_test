@@ -1,6 +1,3 @@
-"""
-В данном модуле создаю подключение к базе данных.
-"""
 import mysql.connector
 from mysql.connector import Error
 
@@ -26,10 +23,11 @@ def connect():
 connect()
 
 
-def manipulate_table(my_db, query):
+def manipulate_table(my_db, queries):
     cursor = my_db.cursor()
     try:
-        cursor.execute(query)
+        for query in queries:
+            cursor.execute(query)
 
         # results = cursor.fetchall()
         # for row in results:
@@ -41,4 +39,3 @@ def manipulate_table(my_db, query):
 
     except Error as e:
         print(e)
-
