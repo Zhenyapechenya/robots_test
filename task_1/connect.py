@@ -17,7 +17,7 @@ def connect():
             database='library'
         )
         if my_db.is_connected():
-            print('Success')
+            print('Successfully connection')
 
     except Error as e:
         print(e)
@@ -30,7 +30,14 @@ def manipulate_table(my_db, query):
     cursor = my_db.cursor()
     try:
         cursor.execute(query, multi=True)
+
+        # results = cursor.fetchall()
+        # for row in results:
+        #     print(row)
+
         my_db.commit()
+
         print("Query executed")
+
     except Error as e:
         print(e)
