@@ -29,11 +29,11 @@ connect()
 def manipulate_table(my_db, query):
     cursor = my_db.cursor()
     try:
-        cursor.execute(query, multi=True)
+        cursor.execute(query)
 
-        results = cursor.fetchall()
-        for row in results:
-            print(row)
+        # results = cursor.fetchall()
+        # for row in results:
+        #     print(row)
 
         my_db.commit()
 
@@ -41,3 +41,4 @@ def manipulate_table(my_db, query):
 
     except Error as e:
         print(e)
+

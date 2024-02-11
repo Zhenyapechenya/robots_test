@@ -21,9 +21,7 @@ create_table = """
     isbn VARCHAR(17),
     title VARCHAR(200) NOT NULL,
     pages INT,
-    date_published DATE,
-    FOREIGN KEY (author_id) REFERENCES authors(author_id),
-    FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
+    date_published DATE
     );
 
     CREATE TABLE IF NOT EXISTS book_author (
@@ -38,7 +36,7 @@ create_table = """
     book_id INT,
     genre_id INT,
     PRIMARY KEY (book_id, genre_id),
-    FOREIGN KEY (genre_id) REFERENCES genres (genre_id) ON DELETE SET NULL,
+    FOREIGN KEY (genre_id) REFERENCES genres (genre_id),
     FOREIGN KEY (book_id) REFERENCES books (book_id)
     );
 """
@@ -80,7 +78,6 @@ test_data = """
 #     DROP TABLE book_genre;
 # """
 
-manipulate_table(my_db, create_table)
+# manipulate_table(my_db, create_table)
 
-# manipulate_table(my_db, test_data)
-
+manipulate_table(my_db, test_data)
