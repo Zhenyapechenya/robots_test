@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Форма обратной связи</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css"></linkrel>
+    </head>
+    <body>
+        <form id="feedbackForm" action="index.html" method="post" onsubmit="return validateForm()">
+          <h1> Форма обратной связи </h1>
+          
+          <fieldset>
+
+            <label for="comment">Комментарий:</label>
+            <textarea id="comment" name="comment"></textarea><br>
+          
+            <label for="fullName">ФИО:</label>
+            <input type="text" id="fullName" name="fullName" required><br>
+
+            <label for="address">Адрес:</label>
+            <input type="text" id="address" name="address"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="mail" name="email">
+        
+            <label for="phone">Мобильный телефон:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Введите 10 цифр"><br>
+            
+          </fieldset>
+        
+          <button type="submit">Отправить</button>
+          
+        </form>
+    
+    <script src="script.js"></script>
+    </body>
+</html>
