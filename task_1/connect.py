@@ -31,9 +31,9 @@ def manipulate_table(my_db, query):
     try:
         cursor.execute(query, multi=True)
 
-        # results = cursor.fetchall()
-        # for row in results:
-        #     print(row)
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
 
         my_db.commit()
 
